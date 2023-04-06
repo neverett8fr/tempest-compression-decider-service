@@ -37,11 +37,11 @@ def get_best_method(type, size):
         X, y, test_size=0.2, random_state=42)
 
     # Create and train the model
-    model = RandomForestRegressor(n_estimators=100, random_state=12)
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
 
-    best_method = -10000
-    highest_ratio = 0
+    best_method = 0
+    highest_ratio = -10000
     for compression_method in range(1, 4, 1):
         x = pd.DataFrame(
             [[type, size, compression_method]],
