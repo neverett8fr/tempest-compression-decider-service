@@ -18,5 +18,5 @@ async def decider(file_type: int, file_size: int):
 
 
 @app.get("/{text}")
-async def root(text: str):
+async def test(text: str):
     return {"test": text}
