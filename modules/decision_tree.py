@@ -51,7 +51,7 @@ class Decider:
 
         best_method = 0
         highest_ratio = 0
-        for compression_method in range(1, 4, 1):
+        for compression_method in range(0, 4, 1):
             x = pd.DataFrame(
                 [[type, size, compression_method]],
                 columns=self.x_features.columns

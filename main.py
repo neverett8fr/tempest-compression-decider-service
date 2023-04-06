@@ -11,7 +11,7 @@ app = FastAPI()
 async def decider(file_type: int, file_size: int):
     # file data is in bits,
     # api url input in bytes - so * 8
-    ext = deciderClass.get_best_method(file_type, file_size * 8)
+    ext = deciderClass.get_best_method(file_type, file_size)
 
     return {"data": {
         "method_ext": deciderClass.get_comp_ext(ext),
