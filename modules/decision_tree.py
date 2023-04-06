@@ -31,7 +31,7 @@ class Decider:
 
     def get_comp_ext(self, ext):
         ext_dict = {
-            0: "", "": 0,
+            0: "none", "none": 0,
             1: ".gzip", ".gzip": 1,
             2: ".rle", ".rle": 2,
             3: ".lzw", ".lzw": 3
@@ -40,7 +40,7 @@ class Decider:
 
     def get_type_ext(self, ext):
         ext_dict = {
-            0: "", "": 0,
+            0: "none", "none": 0,
             1: ".txt", ".txt": 1,
             2: ".png", ".png": 2,
             3: ".jpg", ".jpg": 3
@@ -50,7 +50,7 @@ class Decider:
     def get_best_method(self, type, size):
 
         best_method = 0
-        highest_ratio = -10000
+        highest_ratio = 0
         for compression_method in range(1, 4, 1):
             x = pd.DataFrame(
                 [[type, size, compression_method]],
@@ -64,7 +64,7 @@ class Decider:
             print(
                 f"Compression Method: {compression_method}, File Type: {type}, Predicted Ratio: {y[0]}")
 
-            print("  file type, best predicted method", type, best_method)
-        if highest_ratio <= 0:
-            return 0  # if < 0, no point compressing
+        print("  file type, best predicted method", type, best_method)
+        # if highest_ratio <= 0:
+        #     return 0  # if < 0, no point compressing
         return best_method
