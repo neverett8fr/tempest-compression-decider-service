@@ -61,10 +61,9 @@ class Decider:
                 best_method = compression_method
                 highest_ratio = y[0]
 
-            print(
-                f"Compression Method: {compression_method}, File Type: {type}, Predicted Ratio: {y[0]}")
+        #     print(
+        #         f"Compression Method: {compression_method}, File Type: {type}, Predicted Ratio: {y[0]}")
 
-        print("  file type, best predicted method", type, best_method)
-        # if highest_ratio <= 0:
-        #     return 0  # if < 0, no point compressing
+        # print("  file type, best predicted method", type, best_method)
+
         return best_method

@@ -9,9 +9,10 @@ app = FastAPI()
 
 @app.get("/compression/decide/{file_type}/{file_size}")
 async def decider(file_type: int, file_size: int):
-    # file data is in bits,
-    # api url input in bytes - so * 8
+    # file data is in bytes
     ext = deciderClass.get_best_method(file_type, file_size)
+
+    print("method decided:", ext)
 
     return {"data": {
         "method_ext": deciderClass.get_comp_ext(ext),
