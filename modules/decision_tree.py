@@ -30,6 +30,7 @@ class Decider:
         self.model.fit(self.x_features, self.y_target)
 
     def get_comp_ext(self, ext):
+        print("exts")
         ext_dict = {
             0: "none", "none": 0,
             1: ".gzip", ".gzip": 1,
@@ -39,6 +40,7 @@ class Decider:
         return ext_dict[ext]
 
     def get_type_ext(self, ext):
+        print("type")
         ext_dict = {
             0: "none", "none": 0,
             1: ".txt", ".txt": 1,
